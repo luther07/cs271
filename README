@@ -2,3 +2,4 @@
 * Course was taught by Matt Bone, and interfaces/class hierarchies developed by Matt Bone.
 * Methods and such were implemented by me. I defined the implementation details.
 * This repo is good for quickly reviewing how to implement data structures in Java.
+* Compile using -cp option if your CLASSPATH variable is not set.
