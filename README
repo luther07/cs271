@@ -3,3 +3,4 @@
 * Methods and such were implemented by me. I defined the implementation details.
 * This repo is good for quickly reviewing how to implement data structures in Java.
 * Compile using -cp option if your CLASSPATH variable is not set.
+* Tests subdirectory has dependency on junit(4), still working on that.
