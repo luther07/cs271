@@ -22,18 +22,18 @@ public class Lists {
 	}
 
 	public static int count(List<Integer> list) {
-		if (list.size()==0)	
+		if (list.size()==0)
 			return 0;
 		else
 			return 1+count(rest(list));
 	}
-	
+
 	/*Iterative sum method.
 	 * @return sum of the integer values in the list.
 	 * It works.
 	 * It iterates over the argument and counts the data.
 	 */
-	
+
 	public static int sumIterative(List<Integer>myList){
 		int listSum=0;
 		int current=0;
@@ -47,7 +47,7 @@ public class Lists {
 		while (i<(mySize));
 		return listSum;
 		}
-	
+
 	/*Iterative equal-to method
 	 * @return true if two lists are logically equal and false otherwise.
 	 * It works.
@@ -68,7 +68,7 @@ public class Lists {
 			}
 		return true;
 		}
-	
+
 	/*Iterative reverse-list method
 	 * @return mutated list, with the elements of the list in reverse order.
 	 * It works.
@@ -86,7 +86,7 @@ public class Lists {
 		}
 		return myList;
 	}
-	
+
 	/*Recursive reverse list method
 	 * @ return a list that is in the reverse order of the list in the argument.
 	 * It works.
@@ -109,7 +109,7 @@ public class Lists {
 			int i = myList.remove(0);
 			myList.add((mySize-1), i);
 		}
-		return reverseHelper(myList, (mySize-1));		
+		return reverseHelper(myList, (mySize-1));
 		}
 
 	/*Recursive equal-to method
@@ -124,44 +124,44 @@ public class Lists {
 		if((count(myList))!=(count(yourList))){
 			return false;
 		}
-		
+
 		if(((count(myList))==0)&&((count(yourList))==0))
 			{
 			return true;
 			}
-		
+
 		return (((first(myList))==(first(yourList))) && (recursiveListEqualTo((rest(myList)),rest(yourList))));
-		
+
 	}
-	
+
 	/*Matt Bone's recursive sum method
-	 * 
+	 *
 	 */
 	public static int sum(List<Integer> list) {
-		if (list.size()==0)	
+		if (list.size()==0)
 			return 0;
 		else
 			return first(list)+sum(rest(list));
 	}
-	
+
 	public static int first(List<Integer> list) {
 		return list.get(0);
 	}
-	
+
 	public static int last(List<Integer> list) {
 		return list.get((count(list))-1);
 	}
-	
+
 	public static List<Integer> rest(List<Integer> list) {
 		return list.subList(1, list.size());
 	}
-	
+
 	public static void main(String[] args) {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(1); list.add(2); list.add(3); list.add(4);
-		
+
 		List<Integer> listto = new ArrayList<Integer>();
-		listto.add(1); listto.add(2); listto.add(3); listto.add(4);		
+		listto.add(1); listto.add(2); listto.add(3); listto.add(4);
 		System.out.println(first(list));
 		System.out.println(rest(list));
 		System.out.println(rest(rest(list)));

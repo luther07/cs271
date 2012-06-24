@@ -1,4 +1,4 @@
-package cs271.hw.liststackqueue;
+package com.mycompany.app;
 /**HW-3, CS271
  * @author Mark Johnson
  *SinglyLinkedList Class
@@ -10,12 +10,12 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 
 	private ElementHolder<T> head, tail;
 	private static int size = 0;
-	
+
 	/**Add method adds a new element to a Singly-linked list;
 	 * New elements are added to the end of the list;
 	 * @return void;
-	 */		
-	public void add(T data) {	
+	 */
+	public void add(T data) {
 
 		ElementHolder<T> newElementHolder = new ElementHolder<T>();
 		newElementHolder.data=data;
@@ -26,20 +26,20 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 			tail=head;
 			size++;
 		}
-		
+
 		else {
 			tail.next=newElementHolder;
 			newElementHolder.previous=tail;
 			tail=newElementHolder;
 			newElementHolder.next=null;
 			size++;
-			}		
+			}
 	}
-	
+
 	/**Accessor method;
 	 * @return the data field from the element at index "index";
 	 * returns null if "index" is out of the bounds of the list;
-	 */	
+	 */
 	public T get(int index) {
 		ElementHolder<T>current=new ElementHolder<T>();
 		int count = 0;
@@ -55,15 +55,15 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 	 * Removes the element at index "index";
 	 * @return the data field from the element at index "index";
 	 * returns null if "index" is out of the bounds of the list;
-	 */		
+	 */
 @Override
 	public T remove(int index) {
 		ElementHolder<T>myCurrentElementHolder=new ElementHolder<T>();
 		ElementHolder<T>myReturnValue=new ElementHolder<T>();
 		myCurrentElementHolder=head;
-				
+
 		if((head==null)||(index<0)||(index>(size-1)))return null;
-		
+
 		else if(index==0){
 			ElementHolder<T>LastElement=new ElementHolder<T>();
 			LastElement=head;
@@ -71,7 +71,7 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 			size--;
 			return LastElement.data;
 			}
-		
+
 		else if(index==(size-1)){
 			myCurrentElementHolder=tail;
 			myReturnValue=tail;
@@ -79,14 +79,14 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 			tail=myCurrentElementHolder.previous;
 			size--;
 			return myReturnValue.data;
-			
+
 		}
 
-		else{			
+		else{
 			for(int i=0; i<(index-1); i++){
 				myCurrentElementHolder=myCurrentElementHolder.next;
 			}
-			
+
 			myReturnValue=myCurrentElementHolder.next;
 			myCurrentElementHolder.next=myCurrentElementHolder.next.next;
 			}
@@ -97,7 +97,7 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 /**Default Constructor method;
  * Constructs a default Singly-linked list;
  * @return a default Singly-linked list;
- */	
+ */
 	public SinglyLinkedList(){
 		head = null;
 		tail = null;
@@ -107,7 +107,7 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 	/**Accessor method;
 	 * Checks the state of a Singly-linked list  object to see if it is empty;
 	 * @return "true" if the list is empty and false otherwise;
-	 */	
+	 */
 	public boolean isEmpty() {
 		return head == null;
 
@@ -118,16 +118,16 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 	 * I return the field "size" in order to have running time of O(1) for methods in
 	 * classes SimpleStackImpl and SimpleQueueImpl; I have "commented out" the original
 	 * method, which runs at O(n);
-	 */	
+	 */
 	public int size() {
 		return size;
 		//int count = 0;
-		
+
 		//for(ElementHolder<T>current = head; current!=null; current=current.next)
 		//	count++;
-		//return count;	
+		//return count;
 	}
-	
+
 	/**Nested Class, ElementHolder<T>;
 	 * Holds the elements in a Singly-linked list;
 	 * Added extra field, "previous", in order to make it run at O(1), worst
@@ -135,10 +135,10 @@ public class SinglyLinkedList<T> implements SimpleList<T> {
 	 * the element before the tail without iterating through the whole list;
 	 * Implementation of previous field makes the SinglyLinkedList class into a
 	 * doubly linked list class;
-	 */	
+	 */
 	protected class ElementHolder<T> {
 		protected T data;
 		protected ElementHolder<T>next;
 		protected ElementHolder<T>previous;
-	}	
+	}
 }
