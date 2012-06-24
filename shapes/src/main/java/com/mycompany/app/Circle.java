@@ -1,4 +1,4 @@
-package cs271.hw.shapes;
+package com.mycompany.app;
 
 public interface Circle extends Shape, Comparable <Circle> {
 	public double getRadiusLength();

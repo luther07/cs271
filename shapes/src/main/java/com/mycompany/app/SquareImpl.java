@@ -1,14 +1,14 @@
-package cs271.hw.shapes;
+package com.mycompany.app;
 
 /**SquareImpl.java
   *Author:Mark Johnson
   */
- 
+
 
 public class SquareImpl implements Shape, Square, Comparable<Square>{
 
 	private double mySideLength;
-	
+
 	public double getSideLength() {
 		return mySideLength;
 	}
@@ -17,12 +17,12 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 	{
 		mySideLength = 1.0;
 	}
-	
+
 	public SquareImpl(double sideLength)
 	{
 		mySideLength=sideLength;
 	}
-	
+
 	public void setSideLength(double sideLength){
 		this.mySideLength = sideLength;
 	}
@@ -31,7 +31,7 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 	public double getSurfaceArea() {
 		return mySideLength*mySideLength;
 	}
-	
+
 	/**Equals() method:
 	 * Compares the calling Square object with the a specified Square object for equivalence.
 	 * @returns true if the surface area of the calling object is equal to that of the specified object.
@@ -46,11 +46,11 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 		if (this.getSurfaceArea()>otherSquare.getSurfaceArea())
 			return false;
 		else return true;
-		}		
-	
-	
+		}
 
-	
+
+
+
 	/**Compares the calling Square object with the a specified Square object.
 	 * The comparison is based on the area contained in the square.
 	 * @returns 1 if the calling Square is greater than the specified Square.
@@ -67,7 +67,7 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 				return -1;
 		return 0;
 	}
-	
+
 
 
 }

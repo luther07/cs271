@@ -1,4 +1,4 @@
-package cs271.hw.shapes;
+package com.mycompany.app;
 
 public abstract class LocationAware {
 	protected int x=0, y=0;

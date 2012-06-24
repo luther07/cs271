@@ -1,7 +1,7 @@
 /**
- * 
+ *
  */
-package cs271.hw.shapes;
+package com.mycompany.app;
 
 /**CircleImpl.java
  * @author Mark Johnson
@@ -12,7 +12,7 @@ public class CircleImpl implements Shape, Circle, Comparable<Circle>{
 	/**Default Value Constructor: initializes Circle with default radius value of 1.
 	 */
 	public CircleImpl()//default value constructor
-	{	
+	{
 		myRadius =1.0;
 	}
 	/**Constructor: Explicit Value Constructor
@@ -21,16 +21,16 @@ public class CircleImpl implements Shape, Circle, Comparable<Circle>{
 	 */
 	public CircleImpl(double radius)
 	{
-		myRadius = radius; 
+		myRadius = radius;
 	}
-	
-	/**Accessor method: 
+
+	/**Accessor method:
 	 * @returns the current radius value for a given Circel.
 	 */
 	public double getRadiusLength(){
 		return myRadius;
 		}
-	
+
 	/**Mutator method: sends message to an object, telling it to change the radius value.
 	 */
 	public void setRadiusLength(double radius){
@@ -46,7 +46,7 @@ public class CircleImpl implements Shape, Circle, Comparable<Circle>{
 	public double getSurfaceArea() {
 		return myRadius*myRadius*Math.PI;
 	}
-	
+
 	/**Equals() method:
 	 * Compares the calling Circle object with the a specified Circle object for equivalence.
 	 * @returns true if the surface area of the calling object is equal to that of the specified object.
@@ -61,7 +61,7 @@ public class CircleImpl implements Shape, Circle, Comparable<Circle>{
 		if (this.getSurfaceArea()>otherCircle.getSurfaceArea())
 			return false;
 		else return true;
-		}		
+		}
 /**CompareTo method overrides method from superclass.
  * This method is necessary in implementing the Circle interface.
  */
