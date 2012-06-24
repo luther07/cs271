@@ -1,4 +1,4 @@
-package cs271.checkout;
+package com.mycompany.app;
 
 import java.util.Stack;
 
@@ -7,7 +7,7 @@ import java.util.Stack;
 public class LIFOSCHEDULER implements Scheduler{
 
 	Stack<Customer> stacki = new Stack<Customer>();
-	
+
 	@Override
 	public boolean isEmpty() {
 		return stacki.isEmpty();
@@ -26,7 +26,7 @@ public class LIFOSCHEDULER implements Scheduler{
 	@Override
 	public void push(Customer c) {
 		stacki.push(c);
-		
+
 	}
 
 	public int compareTo(Customer a, Customer b) {

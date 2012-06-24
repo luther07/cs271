@@ -1,11 +1,11 @@
-package cs271.checkout;
+package com.mycompany.app;
 
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class FIFOScheduler implements Scheduler {
-	
+
 	Queue<Customer> line = new LinkedList<Customer>();
 
 	public boolean isEmpty() {
