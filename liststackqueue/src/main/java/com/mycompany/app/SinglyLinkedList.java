@@ -4,7 +4,7 @@ package com.mycompany.app;
  *SinglyLinkedList Class
  */
 
-import cs271.hw.liststackqueue.interfaces.SimpleList;
+import com.mycompany.app.SimpleList;
 
 public class SinglyLinkedList<T> implements SimpleList<T> {
 
