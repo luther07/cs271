@@ -3,7 +3,7 @@ package com.mycompany.app;
  * @author Mark Johnson
  *SimpleQueueImpl class
  */
-import cs271.hw.liststackqueue.interfaces.SimpleQueue;
+import com.mycompany.app.SimpleQueue;
 
 public class SimpleQueueImpl<T> implements SimpleQueue<T> {
 

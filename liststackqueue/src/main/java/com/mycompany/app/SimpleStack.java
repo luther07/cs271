@@ -1,4 +1,4 @@
-package cs271.hw.liststackqueue.interfaces;
+package com.mycompany.app;
 
 public interface SimpleStack<T> extends SimpleCollection{
 	public void push(T item);

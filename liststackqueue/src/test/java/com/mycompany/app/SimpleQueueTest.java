@@ -1,47 +1,52 @@
-package cs271.hw.liststackqueue.tests;
+package com.mycompany.app;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+//import static junit.framework.Assert.assertEquals;
+//import static junit.framework.Assert.assertFalse;
+//import static junit.framework.Assert.assertNull;
+//import static junit.framework.Assert.assertTrue;
+//import junit.framework.Assert;
 
-import org.junit.Before;
+//import junit.framework.Before;
+//import junit.framework.Test;
+
+import org.junit.*;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import cs271.hw.liststackqueue.SimpleQueueImpl;
-import cs271.hw.liststackqueue.interfaces.SimpleQueue;
+import com.mycompany.app.SimpleQueueImpl;
+import com.mycompany.app.SimpleQueue;
 
 public class SimpleQueueTest {
 
 	SimpleQueue<Integer> queue;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		queue = new SimpleQueueImpl<Integer>();
 	}
-	
+
 	@Test
 	public void testInitialConditions() throws Exception {
 		assertTrue(queue.isEmpty());
 		assertEquals(0, queue.size());
 		assertNull(queue.dequeue());
 	}
-	
-	
+
+
 	@Test
 	public void testPushAndPop() throws Exception {
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);
-		
+
 		assertEquals(3, queue.size());
 		assertFalse(queue.isEmpty());
-		
-		assertEquals(1, queue.dequeue());
-		assertEquals(2, queue.dequeue());
-		assertEquals(3, queue.dequeue());
-		
+
+		assertEquals((Integer)1, queue.dequeue());
+		assertEquals((Integer)2, queue.dequeue());
+		assertEquals((Integer)3, queue.dequeue());
+
 		assertTrue(queue.isEmpty());
 		assertEquals(0, queue.size());
 		assertNull(queue.dequeue());

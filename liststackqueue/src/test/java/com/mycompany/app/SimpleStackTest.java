@@ -1,46 +1,51 @@
-package cs271.hw.liststackqueue.tests;
+package com.mycompany.app;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+//import static junit.framework.Assert.assertEquals;
+//import static junit.framework.Assert.assertFalse;
+//import static junit.framework.Assert.assertNull;
+//import static junit.framework.Assert.assertTrue;
+//import junit.framework.Assert;
 
-import org.junit.Before;
+//import junit.framework.Before;
+//import junit.framework.Test;
+
+import org.junit.*;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import cs271.hw.liststackqueue.SimpleStackImpl;
-import cs271.hw.liststackqueue.interfaces.SimpleStack;
+import com.mycompany.app.SimpleStackImpl;
+import com.mycompany.app.SimpleStack;
 
 public class SimpleStackTest {
 
 SimpleStack<Integer> stack;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		stack = new SimpleStackImpl<Integer>();
 	}
-	
+
 	@Test
 	public void testInitialConditions() throws Exception {
 		assertTrue(stack.isEmpty());
 		assertEquals(0, stack.size());
 		assertNull(stack.pop());
 	}
-	
-	
+
+
 	@Test
 	public void testPushAndPop() throws Exception {
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		
+
 		assertEquals(3, stack.size());
 		assertFalse(stack.isEmpty());
-		
-		assertEquals(3, stack.pop());
-		assertEquals(2, stack.pop());
-		assertEquals(1, stack.pop());
-		
+
+		assertEquals((Integer)3, stack.pop());
+		assertEquals((Integer)2, stack.pop());
+		assertEquals((Integer)1, stack.pop());
+
 		assertTrue(stack.isEmpty());
 		assertEquals(0, stack.size());
 		assertNull(stack.pop());
