@@ -41,11 +41,10 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 	public boolean equals(Object obj)
 	{
 		SquareImpl otherSquare = (SquareImpl)obj;
-		if (this.getSurfaceArea()<otherSquare.getSurfaceArea())
+		if (this.getSurfaceArea() == otherSquare.getSurfaceArea())
+			return true;
+		else
 			return false;
-		if (this.getSurfaceArea()>otherSquare.getSurfaceArea())
-			return false;
-		else return true;
 		}
 
 
@@ -59,13 +58,13 @@ public class SquareImpl implements Shape, Square, Comparable<Square>{
 	 */
 	@Override
 	public int compareTo(Square square) {
-				// TODO Auto-generated method stub
+		int result = 0;
 		SquareImpl otherSquare = (SquareImpl)square;
 		if(this.getSurfaceArea() > otherSquare.getSurfaceArea())
-				return 1;
+			result = 1;
 		if (this.getSurfaceArea() < otherSquare.getSurfaceArea())
-				return -1;
-		return 0;
+			result = -1;
+		return result;
 	}
 
 
