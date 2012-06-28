@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mycompany.app;
 
 /**DonutImpl.java
@@ -11,36 +8,34 @@ public class DonutImpl extends Object implements Shape, Donut, Comparable<Donut>
 	/**Accessor Method
 	 * @return one radius measurement for a round "Donut".
 	 */
-	public double getRadiusLengthOne(){
+	public double getRadiusLengthOne() {
 		return myRadius1;
 	}
 
 	/**Accessor method
 	 * @return other radius measurement for a round "Donut".
 	 */
-	public double getRadiusLengthTwo(){
+	public double getRadiusLengthTwo() {
 		return myRadius2;
 	}
 
 	/**Default Value Constructor
-	 * Constructs instance with radius lengths of 1.0 & 2.0,
-	 * which is a valid "Donut".
-	 */
-		public DonutImpl()
-		{
-			myRadius1=1.0;
-			myRadius2=2.0;
+	* Constructs instance with radius lengths of 1.0 & 2.0,
+	* which is a valid "Donut".
+	*/
+	public DonutImpl() {
+		myRadius1=1.0;
+		myRadius2=2.0;
 	}
 
 
-		/**Explicit Value Constructor
-		 * Constructs instance with radius lenths that are passed
-		 * to the method: radius1 and radius2.
-		 * @param radius1
-		 * @param radius2
-		 */
-		public DonutImpl(double radius1, double radius2)
-	{
+	/**Explicit Value Constructor
+	 * Constructs instance with radius lenths that are passed
+	 * to the method: radius1 and radius2.
+	 * @param radius1
+	 * @param radius2
+	 */
+	public DonutImpl(double radius1, double radius2) {
 		myRadius1=radius1;
 		myRadius2=radius2;
 
@@ -50,7 +45,7 @@ public class DonutImpl extends Object implements Shape, Donut, Comparable<Donut>
  * Method sends two double parameters and tells the object to change its radius
  * paramaters to the received parameters.
  */
-	public void setDonutMeasures(double radius1, double radius2){
+	public void setDonutMeasures(double radius1, double radius2) {
 		myRadius1 = radius1;
 		myRadius2 = radius2;
 	}
@@ -78,16 +73,13 @@ public class DonutImpl extends Object implements Shape, Donut, Comparable<Donut>
 	 * by this method, equalTo().
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) {
 		DonutImpl otherDonut = (DonutImpl)obj;
 
-		if ((float)this.getSurfaceArea()<(float)otherDonut.getSurfaceArea())
-			return false;
-		if ((float)this.getSurfaceArea()>(float)otherDonut.getSurfaceArea())
-			return false;
-		else return true;
-		}
+		if ((float)this.getSurfaceArea() == (float)otherDonut.getSurfaceArea())
+			return true;
+		else return false;
+	}
 
 	/**Overrides and defines the compareTo method for class DonutImp.
 	 * @return 1 if the calling object has a greater surface area than the object being sent.
@@ -98,19 +90,23 @@ public class DonutImpl extends Object implements Shape, Donut, Comparable<Donut>
 	 * with the float type-cast, but the choice was between losing some decimals of the end but
 	 * having some donuts be equal, or keeping all of the decimals and having no donuts be equal.
 	 */
-@Override
-	public int compareTo(Donut donut){
+	@Override
+	public int compareTo(Donut donut) {
+
+	// initialize default to 0, which indicates equivalence
+	int result = 0;
 
 	DonutImpl otherDonut = (DonutImpl)donut;
 	if ((float)this.getSurfaceArea() > (float)otherDonut.getSurfaceArea())
-		return 1;
-	if ((float)this.getSurfaceArea() < (float)otherDonut.getSurfaceArea())
-		return -1;
-		return 0;
+		result = 1;
+	else if ((float)this.getSurfaceArea() < (float)otherDonut.getSurfaceArea())
+		result = -1;
+	return result;
 	}
-/**declaration of private fields used.
- * @param myRadius1 is the radius of one of the circles in the outline of a donut.
- * @param myRadius2 is the radius of the other circle in the outline of a donut.
- */
-private double myRadius1, myRadius2;
+
+	/**declaration of private fields used.
+ 	* @param myRadius1 is the radius of one of the circles in the outline of a donut.
+ 	* @param myRadius2 is the radius of the other circle in the outline of a donut.
+ 	*/
+	private double myRadius1, myRadius2;
 }
